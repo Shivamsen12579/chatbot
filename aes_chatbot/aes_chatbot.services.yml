@@ -1,0 +1,10 @@
+services:
+  logger.channel.aes_chatbot:
+    parent: logger.channel_base
+    arguments: ['aes_chatbot']
+
+  aes_chatbot.groq_client:
+    class: Drupal\aes_chatbot\Service\GroqClient
+    arguments:
+      - '@http_client'
+      - '@logger.channel.aes_chatbot'

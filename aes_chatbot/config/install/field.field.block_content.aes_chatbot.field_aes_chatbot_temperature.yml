@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.aes_chatbot
+    - field.storage.block_content.field_aes_chatbot_temperature
+  enforced:
+    module:
+      - aes_chatbot
+id: block_content.aes_chatbot.field_aes_chatbot_temperature
+field_name: field_aes_chatbot_temperature
+entity_type: block_content
+bundle: aes_chatbot
+label: 'Temperature'
+description: 'Randomness. 0 = deterministic, 1 = balanced, 2 = creative. 0.7 is a good default.'
+required: false
+translatable: false
+default_value:
+  - value: '0.70'
+default_value_callback: ''
+settings:
+  min: '0'
+  max: '2'
+  prefix: ''
+  suffix: ''
+field_type: decimal

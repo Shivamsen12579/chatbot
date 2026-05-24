@@ -1,0 +1,28 @@
+# AJAX endpoint hit by the widget JS. Returns {reply: "..."} or {error: "..."}.
+aes_chatbot.message:
+  path: '/aes-chatbot/api/message/{block_uuid}'
+  defaults:
+    _controller: '\Drupal\aes_chatbot\Controller\ChatbotController::message'
+  methods: [POST]
+  requirements:
+    _permission: 'use aes chatbot'
+    # Header-based CSRF. Differs from `_csrf_token` in that it auto-bypasses
+    # for anonymous users (no session = no CSRF risk). Authenticated users
+    # must send the token returned by GET /session/token in X-CSRF-Token.
+    # Abuse on the anon path is bounded by FLOOD_* in ChatbotController.
+    _csrf_request_header_token: 'TRUE'
+    # Constrain the path param to a UUID v4 shape so junk doesn't reach
+    # the controller and entity lookup at all.
+    block_uuid: '[a-f0-9-]{36}'
+  options:
+    _format: 'json'
+    no_cache: 'TRUE'
+
+aes_chatbot.request_demo:
+  path: '/request-demo'
+  defaults:
+    _form: '\Drupal\aes_chatbot\Form\RequestDemoForm'
+    _title: 'Request a demo'
+  requirements:
+    # Public form — anyone, including anonymous, can submit a demo request.
+    _access: 'TRUE'

@@ -1,0 +1,9 @@
+name: 'AES Chatbot'
+type: module
+description: 'Custom block type that renders an OpenAI-powered chatbot widget. API key, model, and prompt are configured on each block instance.'
+package: Custom
+core_version_requirement: ^10 || ^11
+dependencies:
+  - drupal:block_content
+  - drupal:field
+  - drupal:user

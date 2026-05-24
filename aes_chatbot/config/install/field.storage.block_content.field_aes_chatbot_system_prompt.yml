@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aes_chatbot
+  module:
+    - block_content
+id: block_content.field_aes_chatbot_system_prompt
+field_name: field_aes_chatbot_system_prompt
+entity_type: block_content
+type: text_long
+settings:
+  case_sensitive: false
+module: text
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

@@ -1,0 +1,24 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.aes_chatbot
+    - field.storage.block_content.field_aes_chatbot_model
+  enforced:
+    module:
+      - aes_chatbot
+  module:
+    - options
+id: block_content.aes_chatbot.field_aes_chatbot_model
+field_name: field_aes_chatbot_model
+entity_type: block_content
+bundle: aes_chatbot
+label: 'Groq model'
+description: 'Chat completion model. Llama 3.1 8B Instant is the recommended default — very fast and cheap.'
+required: true
+translatable: false
+default_value:
+  - value: 'llama-3.1-8b-instant'
+default_value_callback: ''
+settings: {  }
+field_type: list_string

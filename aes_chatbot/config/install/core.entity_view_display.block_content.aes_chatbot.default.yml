@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.aes_chatbot
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_api_key
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_bot_name
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_demo_url
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_max_tokens
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_model
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_system_prompt
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_temperature
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_welcome
+  enforced:
+    module:
+      - aes_chatbot
+id: block_content.aes_chatbot.default
+targetEntityType: block_content
+bundle: aes_chatbot
+mode: default
+content: {  }
+hidden:
+  field_aes_chatbot_api_key: true
+  field_aes_chatbot_bot_name: true
+  field_aes_chatbot_demo_url: true
+  field_aes_chatbot_max_tokens: true
+  field_aes_chatbot_model: true
+  field_aes_chatbot_system_prompt: true
+  field_aes_chatbot_temperature: true
+  field_aes_chatbot_welcome: true

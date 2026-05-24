@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.aes_chatbot
+    - field.storage.block_content.field_aes_chatbot_bot_name
+  enforced:
+    module:
+      - aes_chatbot
+id: block_content.aes_chatbot.field_aes_chatbot_bot_name
+field_name: field_aes_chatbot_bot_name
+entity_type: block_content
+bundle: aes_chatbot
+label: 'Bot display name'
+description: 'Name shown in the chat widget header (e.g. "AES Assistant").'
+required: false
+translatable: true
+default_value:
+  - value: 'AES Assistant'
+default_value_callback: ''
+settings: {  }
+field_type: string

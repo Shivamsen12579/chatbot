@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.aes_chatbot
+    - field.storage.block_content.field_aes_chatbot_api_key
+  enforced:
+    module:
+      - aes_chatbot
+id: block_content.aes_chatbot.field_aes_chatbot_api_key
+field_name: field_aes_chatbot_api_key
+entity_type: block_content
+bundle: aes_chatbot
+label: 'Groq API key'
+description: 'Groq API key (gsk_...). Get one at https://console.groq.com/keys. Stored on the block entity. NEVER exposed to the browser.'
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string

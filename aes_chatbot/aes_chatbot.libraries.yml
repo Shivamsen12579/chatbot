@@ -1,0 +1,11 @@
+widget:
+  version: 1.0
+  js:
+    js/chatbot.js: {}
+  css:
+    component:
+      css/chatbot.css: {}
+  dependencies:
+    - core/drupal
+    - core/drupalSettings
+    - core/once

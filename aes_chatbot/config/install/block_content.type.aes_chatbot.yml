@@ -1,0 +1,10 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aes_chatbot
+id: aes_chatbot
+label: 'AES Chatbot'
+revision: 0
+description: 'OpenAI-powered chatbot widget. Each instance has its own API key, model, prompt, and visual settings.'

@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aes_chatbot
+  module:
+    - block_content
+id: block_content.field_aes_chatbot_max_tokens
+field_name: field_aes_chatbot_max_tokens
+entity_type: block_content
+type: integer
+settings:
+  unsigned: true
+  size: normal
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

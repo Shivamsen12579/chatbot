@@ -1,0 +1,23 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aes_chatbot
+  module:
+    - block_content
+id: block_content.field_aes_chatbot_api_key
+field_name: field_aes_chatbot_api_key
+entity_type: block_content
+type: string
+settings:
+  max_length: 255
+  case_sensitive: true
+  is_ascii: true
+module: core
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

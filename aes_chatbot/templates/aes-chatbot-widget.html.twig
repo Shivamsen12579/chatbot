@@ -1,0 +1,94 @@
+{#
+/**
+ * @file
+ * Twig template for the AES Chatbot widget.
+ *
+ * Rendered by aes_chatbot_block_content_view(). The API key field is never
+ * exposed to the DOM — only uuid + presentation values reach this template.
+ *
+ * Variables:
+ * - uuid: block_content UUID, used by JS to identify the chatbot endpoint.
+ * - bot_name: display name in the header.
+ * - welcome: initial bot message.
+ * - demo_url: optional URL for the "Request a demo" CTA banner. Hidden if empty.
+ */
+#}
+<div
+  class="aes-chatbot js-aes-chatbot"
+  data-aes-chatbot-uuid="{{ uuid }}">
+  <button
+    type="button"
+    class="aes-chatbot__toggle"
+    aria-expanded="false"
+    aria-controls="aes-chatbot-panel-{{ uuid }}"
+    aria-label="{{ 'Open chat'|t }}">
+    <span class="aes-chatbot__toggle-icon" aria-hidden="true">
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+      </svg>
+    </span>
+    <span class="aes-chatbot__toggle-label visually-hidden">{{ 'Open chat'|t }}</span>
+  </button>
+
+  <section
+    id="aes-chatbot-panel-{{ uuid }}"
+    class="aes-chatbot__panel"
+    role="dialog"
+    aria-label="{{ bot_name }}"
+    hidden>
+    <header class="aes-chatbot__header">
+      <span class="aes-chatbot__title">{{ bot_name }}</span>
+      <button
+        type="button"
+        class="aes-chatbot__close"
+        aria-label="{{ 'Close chat'|t }}">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </header>
+
+    {% if demo_url %}
+      <a class="aes-chatbot__cta" href="{{ demo_url }}">
+        <span class="aes-chatbot__cta-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M5 12h14"></path><polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </span>
+        <span class="aes-chatbot__cta-label">{{ 'Request a demo'|t }}</span>
+      </a>
+    {% endif %}
+
+    <div
+      class="aes-chatbot__messages"
+      role="log"
+      aria-live="polite"
+      aria-atomic="false"
+      data-aes-chatbot-messages>
+      <div class="aes-chatbot__message aes-chatbot__message--bot">
+        <div class="aes-chatbot__bubble">{{ welcome }}</div>
+      </div>
+    </div>
+
+    <form class="aes-chatbot__form" data-aes-chatbot-form>
+      <label for="aes-chatbot-input-{{ uuid }}" class="visually-hidden">{{ 'Type a message'|t }}</label>
+      <textarea
+        id="aes-chatbot-input-{{ uuid }}"
+        class="aes-chatbot__input"
+        data-aes-chatbot-input
+        rows="1"
+        placeholder="{{ 'Type a message…'|t }}"
+        maxlength="2000"
+        required></textarea>
+      <button type="submit" class="aes-chatbot__send" aria-label="{{ 'Send message'|t }}">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <line x1="22" y1="2" x2="11" y2="13"></line>
+          <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+        </svg>
+      </button>
+    </form>
+
+    <p class="aes-chatbot__footer">{{ 'AI-generated responses may be inaccurate.'|t }}</p>
+  </section>
+</div>

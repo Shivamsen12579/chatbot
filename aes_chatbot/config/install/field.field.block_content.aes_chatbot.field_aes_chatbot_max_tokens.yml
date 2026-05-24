@@ -1,0 +1,26 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.aes_chatbot
+    - field.storage.block_content.field_aes_chatbot_max_tokens
+  enforced:
+    module:
+      - aes_chatbot
+id: block_content.aes_chatbot.field_aes_chatbot_max_tokens
+field_name: field_aes_chatbot_max_tokens
+entity_type: block_content
+bundle: aes_chatbot
+label: 'Max response tokens'
+description: 'Cap on the assistant response length. 500 is a good default — higher costs more.'
+required: false
+translatable: false
+default_value:
+  - value: 500
+default_value_callback: ''
+settings:
+  min: 50
+  max: 4000
+  prefix: ''
+  suffix: ''
+field_type: integer

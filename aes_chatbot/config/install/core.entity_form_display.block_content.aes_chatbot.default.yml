@@ -1,0 +1,93 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.aes_chatbot
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_api_key
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_bot_name
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_demo_url
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_max_tokens
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_model
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_system_prompt
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_temperature
+    - field.field.block_content.aes_chatbot.field_aes_chatbot_welcome
+  enforced:
+    module:
+      - aes_chatbot
+  module:
+    - options
+    - text
+id: block_content.aes_chatbot.default
+targetEntityType: block_content
+bundle: aes_chatbot
+mode: default
+content:
+  field_aes_chatbot_api_key:
+    type: string_textfield
+    weight: 1
+    region: content
+    settings:
+      size: 60
+      placeholder: 'gsk_...'
+    third_party_settings: {  }
+  field_aes_chatbot_model:
+    type: options_select
+    weight: 2
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_aes_chatbot_system_prompt:
+    type: text_textarea
+    weight: 3
+    region: content
+    settings:
+      rows: 8
+      placeholder: ''
+    third_party_settings: {  }
+  field_aes_chatbot_bot_name:
+    type: string_textfield
+    weight: 4
+    region: content
+    settings:
+      size: 60
+      placeholder: 'AES Assistant'
+    third_party_settings: {  }
+  field_aes_chatbot_welcome:
+    type: string_textarea
+    weight: 5
+    region: content
+    settings:
+      rows: 2
+      placeholder: ''
+    third_party_settings: {  }
+  field_aes_chatbot_max_tokens:
+    type: number
+    weight: 6
+    region: content
+    settings:
+      placeholder: '500'
+    third_party_settings: {  }
+  field_aes_chatbot_temperature:
+    type: number
+    weight: 7
+    region: content
+    settings:
+      placeholder: '0.7'
+    third_party_settings: {  }
+  field_aes_chatbot_demo_url:
+    type: string_textfield
+    weight: 8
+    region: content
+    settings:
+      size: 60
+      placeholder: '/form/aes_request_demo'
+    third_party_settings: {  }
+  info:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

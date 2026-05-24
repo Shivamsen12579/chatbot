@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.aes_chatbot
+    - field.storage.block_content.field_aes_chatbot_demo_url
+  enforced:
+    module:
+      - aes_chatbot
+id: block_content.aes_chatbot.field_aes_chatbot_demo_url
+field_name: field_aes_chatbot_demo_url
+entity_type: block_content
+bundle: aes_chatbot
+label: 'Request Demo URL'
+description: 'If set, the chatbot widget shows a "Request a demo" button that links here. Defaults to the bundled form at <code>/request-demo</code>. Set to any internal path or absolute URL to override; leave blank to hide the button.'
+required: false
+translatable: false
+default_value:
+  - value: '/request-demo'
+default_value_callback: ''
+settings: {  }
+field_type: string

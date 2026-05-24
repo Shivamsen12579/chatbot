@@ -1,0 +1,3 @@
+use aes chatbot:
+  title: 'Use AES Chatbot'
+  description: 'Allow the user to send messages through the AES chatbot widget.'

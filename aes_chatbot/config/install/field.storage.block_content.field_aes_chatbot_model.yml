@@ -1,0 +1,31 @@
+langcode: en
+status: true
+dependencies:
+  enforced:
+    module:
+      - aes_chatbot
+  module:
+    - block_content
+    - options
+id: block_content.field_aes_chatbot_model
+field_name: field_aes_chatbot_model
+entity_type: block_content
+type: list_string
+settings:
+  allowed_values:
+    - value: 'llama-3.1-8b-instant'
+      label: 'Llama 3.1 8B Instant (very fast)'
+    - value: 'llama-3.3-70b-versatile'
+      label: 'Llama 3.3 70B Versatile (smarter)'
+    - value: 'gemma2-9b-it'
+      label: 'Gemma 2 9B'
+    - value: 'deepseek-r1-distill-llama-70b'
+      label: 'DeepSeek R1 Distill Llama 70B'
+  allowed_values_function: ''
+module: options
+locked: false
+cardinality: 1
+translatable: false
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false
